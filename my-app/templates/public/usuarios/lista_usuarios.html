@@ -23,6 +23,7 @@
           <tr style="background-color: #ddd">
             <th>Cédula</th>
             <th>Nombre</th>
+            <th>Direccion</th>
             <th>Área</th>
             <th>Rol</th>
             <th>Acciones</th>
@@ -32,7 +33,8 @@
           {% for usuario in resp_usuariosBD %}
           <tr>
             <td>{{ usuario.cedula}}</td>
-            <td>{{ usuario.nombre_usuario}} {{usuario.apellido_usuario}}</td> 
+            <td>{{ usuario.nombre_usuario}} {{usuario.apellido_usuario}}</td>
+            <td>{{ usuario.Direccion}}</td>
             <td>
               {%for area in areas%}
               {%if area.id_area == usuario.id_area%}
