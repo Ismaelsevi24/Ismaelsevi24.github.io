@@ -153,6 +153,11 @@ def eliminarUsuario(id):
     try:
         with connectionBD() as conexion_MySQLdb:
             with conexion_MySQLdb.cursor(dictionary=True) as cursor:
+                
+                querySQL_acceso = "DELETE FROM railway.accesos WHERE id_usuario = %s"
+                cursor.execute(querySQL_acceso, (id,))
+                conexion_MySQLdb.commit()
+
                 querySQL = "DELETE FROM usuarios WHERE id_usuario=%s"
                 cursor.execute(querySQL, (id,))
                 conexion_MySQLdb.commit()
