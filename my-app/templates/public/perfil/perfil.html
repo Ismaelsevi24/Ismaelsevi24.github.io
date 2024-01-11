@@ -45,6 +45,15 @@
               value="{{ info_perfil_session[0]['apellido_usuario'] }}"
               />
           </div>
+          <div class="mb-3">
+            <label for="Direccion" class="form-label">Direccion</label>
+            <input
+              class="form-control"
+              type="text"
+              name="Direccion"
+              value="{{ info_perfil_session[0]['Direccion'] }}"
+              />
+          </div>
           <div>
             <label for="area" class="form-label">Area</label>
             <select class="form-select" name="selectArea" {%if dataLogin.rol == 2 %} disabled {%endif%}>

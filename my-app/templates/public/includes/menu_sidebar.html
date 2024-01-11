@@ -37,6 +37,14 @@
     </li>
     {% if dataLogin.rol == 1 %}
     <li
+    class="menu-item {% if request.path == '/monitoreo' %} active{%endif%}"
+  >
+    <a href="/monitoreo" class="menu-link">
+      <i class="menu-icon bi bi-file-lock-fill"></i>
+      <div data-i18n="Tables">Monitoreo</div>
+    </a>
+  </li>
+    <li
       class="menu-item {% if request.path == '/lista-de-areas' %} active{% endif %}"
     >
       <a href="/lista-de-areas" class="menu-link">
