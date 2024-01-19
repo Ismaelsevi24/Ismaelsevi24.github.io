@@ -52,7 +52,7 @@
         </thead>
         <tbody>
           {% for reporte in reportes %}
-          {% if dataLogin.rol == 2 %}
+          {% if dataLogin.rol == 1 %}
           {% if reporte.cedula == dataLogin.cedula%}
           <tr>
             <td>{{ reporte.id_acceso}}</td>
