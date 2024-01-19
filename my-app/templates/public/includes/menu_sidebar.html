@@ -54,6 +54,24 @@
       </a>
     </li>
     {%endif%}
+    <li class="menu-item {% if request.path == '/sensor-temperatura' %} active {% endif %}">
+      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}
+        <a href="/sensor-temperatura" class="menu-link">
+            <i class="bi bi-thermometer-half"></i>
+            <div data-i18n="Etiqueta">Sensor de temperatura</div>      
+        </a>
+      {%endif%}
+    </li>
+
+    <li 
+      class="menu-item {% if request.path == '/sensor-humo' %} active {% endif %}">
+      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
+        <a href="/sensor-humo" class="menu-link">
+          <i class="bi bi-fire"></i>
+          <div data-i18n="Etiqueta">Sensor de humo </div>
+        </a>
+      {%endif%}
+    </li>
     <li
       class="menu-item {% if request.path == '/mi-perfil/{{dataLogin.id}}'%} active {% endif %}"
     >

@@ -1,0 +1,66 @@
+{% extends 'public/base_cpanel.html' %}
+
+{% block title %}Data Center 🖥 | Sensores {% endblock %}
+
+{% block body %}
+  <div class="card content_consignaciones" style="border-radius: 0px !important">
+    <section id="respuestaFiltroMes">
+      <h2 class="text-center mt-5 mb-5">
+        Sensor de temperatura 🌡
+        <hr />
+      </h2>
+
+      <div class="table-responsive text-nowrap">
+        <table class="table table-hover">
+          <thead>
+            <tr style="background-color: #ddd">
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Temperatura</th>
+              <th>Humedad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sensor_temperatura_h in datos_sensor_temperatura %}
+              <tr>
+                <td>{{ sensor_temperatura_h.id_sensor }}</td>
+                <td>{{ sensor_temperatura_h.fecha_alerta }}</td>
+                <td>{{ sensor_temperatura_h.humedad }}</td>
+                <td>{{ sensor_temperatura_h.temperatura }}</td>
+                <td>
+                  <!-- Botón de eliminar -->
+                  <a style="color: white;"
+                     onclick="eliminarSensor('{{ sensor_temperatura_h.id_sensor }}');"
+                     class="btn btn-danger btn-sm"
+                     data-bs-toggle="tooltip"
+                     data-bs-offset="0,4"
+                     data-bs-placement="top"
+                     data-bs-html="true"
+                     title="<span>Eliminar Sensor ID {{ sensor_temperatura_h.id_sensor }}</span>">
+                    <i class="bi bi-trash3"></i>
+                    Eliminar
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Script Custom -->
+  {% block customJS %}
+  <script>
+    function eliminarSensor(id_sensor) {
+      if (confirm("¿Estás seguro que deseas eliminar el Sensor?")) {
+        let url = `/eliminar-sensor-temperatura/${id_sensor}`;
+        if (url) {
+          window.location.href = url;
+        }
+      }
+    }
+  </script>
+  {% endblock %}
+{% endblock %}
