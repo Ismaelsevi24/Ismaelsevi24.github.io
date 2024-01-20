@@ -161,3 +161,9 @@ def eliminar_sensor_temperatura_route(id_sensor):
 
     # Redirige a la página principal o a donde desees después de la eliminación
     return redirect(url_for('inicio'))
+
+
+@app.route('/vistadata', methods=['GET'])
+def vistadata():
+    # Puedes agregar lógica adicional si es necesario
+    return render_template('public/usuarios/vistadata.html')
