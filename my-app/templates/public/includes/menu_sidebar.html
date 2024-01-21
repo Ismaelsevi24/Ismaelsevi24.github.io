@@ -74,14 +74,14 @@
     </li>
 
     <li 
-      class="menu-item {% if request.path == '/vistadata' %} active {% endif %}">
+    class="menu-item {% if request.path == '/datavista' %} active {% endif %}">
       {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
-        <a href="/vistadata" class="menu-link">
-          <i class="bi bi-building-fill-gear"></i>
-          <div data-i18n="Etiqueta">Datacenter Vista</div>
-        </a>
+      <a href="/datavista" class="menu-link">
+        <i class="bi bi-building-fill-gear"></i>
+        <div data-i18n="Etiqueta">Datacenter Vista</div>
+      </a>
       {%endif%}
-    </li>
+  </li>
     <li
       class="menu-item {% if request.path == '/mi-perfil/{{dataLogin.id}}'%} active {% endif %}"
     >

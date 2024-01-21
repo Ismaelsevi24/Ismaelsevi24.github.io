@@ -1,0 +1,53 @@
+{% extends 'public/base_cpanel.html' %}
+
+{% block title %}Data Center 🖥 | vista_data {% endblock %}
+
+{% block body %}
+  <div class="card content_consignaciones" style="border-radius: 0px !important">
+    <section id="respuestaFiltroMes">
+      <h2 class="text-center mt-5 mb-5">
+        Diseño Data Center 
+        <hr />
+      </h2>
+
+      <!-- Carrusel de Bootstrap -->
+      <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <style>
+          .carousel-inner img {
+            border: 5px solid #000; /* Borde negro */
+            border-radius: 10px; /* Borde circular */
+          }
+        </style>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="/static/assets/img/captura1.png" alt="Imagen 1">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/static/assets/img/captura2.png" alt="Imagen 2">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/static/assets/img/captura3.png" alt="Imagen 3">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/static/assets/img/captura4.png" alt="Imagen 4">
+          </div>
+          <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- Script de Bootstrap (asegúrate de incluir jQuery y Popper.js antes de Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% endblock %}

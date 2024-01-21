@@ -163,7 +163,13 @@ def eliminar_sensor_temperatura_route(id_sensor):
     return redirect(url_for('inicio'))
 
 
-@app.route('/vistadata', methods=['GET'])
-def vistadata():
-    # Puedes agregar lógica adicional si es necesario
-    return render_template('public/usuarios/vistadata.html')
+
+
+@app.route('/datavista', methods=['GET'])
+def datavista():
+    if 'conectado' in session:
+        
+        return render_template('public/usuarios/datavista.html', dataLogin=dataLoginSesion())
+    else:
+        flash('Primero debes iniciar sesión.', 'error')
+        return redirect(url_for('inicio'))
