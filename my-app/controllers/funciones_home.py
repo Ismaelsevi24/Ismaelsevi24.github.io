@@ -331,3 +331,15 @@ def eliminarSensorTemperatura(id_sensor):
     except Exception as e:
         print(f"Error en eliminarSensorTemperatura: {e}")
         return []
+def tarjeta():
+    try:
+        with connectionBD() as conexion_MySQLdb:
+            with conexion_MySQLdb.cursor(dictionary=True) as cursor:
+                # Modifica la consulta según la estructura de tu base de datos
+                querySQL = "SELECT nombre, tarjeta, id_usuario, fecha_hora FROM tarjeta_rfid ORDER BY fecha_hora DESC"
+                cursor.execute(querySQL)
+                datos_tarjeta = cursor.fetchall()
+        return datos_tarjeta
+    except Exception as e:
+        print(f"Error al obtener registros de la tarjeta: {e}")
+        return []

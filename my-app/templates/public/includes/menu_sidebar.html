@@ -72,6 +72,16 @@
         </a>
       {%endif%}
     </li>
+    <li class="menu-item {% if request.path == '/tarjeta-rfid' %} active {% endif %}">
+      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
+        <a href="/tarjeta-rfid" class="menu-link">
+          <i class="bi bi-credit-card"></i>
+          <span class="menu-text" style="margin-left: 12px;"> <!-- Agregado un margen izquierdo al texto -->
+            <div data-i18n="Etiqueta">Tarjeta RFID</div>
+          </span>
+        </a>
+      {% endif%}
+    </li>
 
     <li 
     class="menu-item {% if request.path == '/datavista' %} active {% endif %}">

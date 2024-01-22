@@ -173,3 +173,20 @@ def datavista():
     else:
         flash('Primero debes iniciar sesión.', 'error')
         return redirect(url_for('inicio'))
+
+#Datos tarjeta
+@app.route('/tarjeta-rfid', methods=['GET'])
+def tarjet():
+    if 'conectado' in session:
+        try:
+            # Obtiene los datos de los sensores de temperatura desde la base de datos
+            datos_tarjeta = tarjeta()
+
+            # Renderiza la plantilla con los datos
+            return render_template('public/usuarios/tarjeta.html', datos_tarjeta = tarjeta(), dataLogin=dataLoginSesion())
+        except Exception as e:
+            flash(f"Error al obtener datos registros de la tarjeta: {e}", 'error')
+            return redirect(url_for('inicio'))
+    else:
+        flash('Primero debes iniciar sesión.', 'error')
+        return redirect(url_for('inicio'))
