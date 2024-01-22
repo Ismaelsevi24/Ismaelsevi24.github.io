@@ -41,7 +41,7 @@
     >
       <a href="/lista-de-areas" class="menu-link">
         <i class="menu-icon bi bi-person-lines-fill"></i>
-        <div data-i18n="Boxicons">Lista de Áreas</div>
+        <div data-i18n="Boxicons">Departametos Data Center</div>
       </a>
     </li>
     {%endif%} {% if dataLogin.rol == 1 %}
@@ -58,6 +58,7 @@
       {% if dataLogin.rol == 1 and dataLogin.id == 1 %}
         <a href="/sensor-temperatura" class="menu-link">
             <i class="bi bi-thermometer"></i>
+            <span class="menu-text" style="margin-left: 12px;"></span>
             <div data-i18n="Etiqueta"> Sensor de temperatura</div>      
         </a>
       {%endif%}
@@ -68,6 +69,7 @@
       {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
         <a href="/sensor-humo" class="menu-link">
           <i class="bi bi-fire"></i>
+          <span class="menu-text" style="margin-left: 12px;"></span>
           <div data-i18n="Etiqueta">Sensor de humo </div>
         </a>
       {%endif%}
@@ -88,6 +90,7 @@
       {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
       <a href="/datavista" class="menu-link">
         <i class="bi bi-building-fill-gear"></i>
+        <span class="menu-text" style="margin-left: 12px;"></span>
         <div data-i18n="Etiqueta">Datacenter Vista</div>
       </a>
       {%endif%}
