@@ -283,7 +283,7 @@ def sensor_temperatura():
         with connectionBD() as conexion_MySQLdb:
             with conexion_MySQLdb.cursor(dictionary=True) as cursor:
                 # Modifica la consulta según la estructura de tu base de datos
-                querySQL = "SELECT id_sensor, fecha_alerta, humedad, temperatura FROM sensor_temperatura_h"
+                querySQL = "SELECT id_sensor, fecha_alerta, temperatura FROM sensor_temperatura_h"
                 cursor.execute(querySQL)
                 datos_sensor_temperatura = cursor.fetchall()
         return datos_sensor_temperatura
