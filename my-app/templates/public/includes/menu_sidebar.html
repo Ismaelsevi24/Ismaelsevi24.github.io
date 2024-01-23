@@ -19,90 +19,82 @@
 
   <div class="menu-inner-shadow"></div>
   <ul class="menu-inner py-5">
-    <li
-      class="menu-item {% if request.path == '/interfaz-clave' %} active {% endif %}"
-    >
+    <li class="menu-item {% if request.path == '/interfaz-clave' %} active {% endif %}">
       <a href="/interfaz-clave" class="menu-link">
         <i class="menu-icon bi bi-person-fill-lock"></i>
         <div data-i18n="Tables">Generar Clave</div>
       </a>
     </li>
-    <li
-      class="menu-item {% if request.path == '/reporte-accesos' %} active{%endif%}"
-    >
+
+    <li class="menu-item {% if request.path == '/reporte-accesos' %} active{% endif %}">
       <a href="/reporte-accesos" class="menu-link">
         <i class="menu-icon bi bi-file-lock-fill"></i>
         <div data-i18n="Tables">Reporte Accesos</div>
       </a>
     </li>
-    {% if dataLogin.rol == 1 %}
-    <li
-      class="menu-item {% if request.path == '/lista-de-areas' %} active{% endif %}"
-    >
-      <a href="/lista-de-areas" class="menu-link">
-        <i class="menu-icon bi bi-person-lines-fill"></i>
-        <div data-i18n="Boxicons">Departametos Data Center</div>
-      </a>
-    </li>
-    {%endif%} {% if dataLogin.rol == 1 %}
-    <li
-      class="menu-item {% if request.path == '/lista-de-usuarios' %} active {% endif %}"
-    >
-      <a href="/lista-de-usuarios" class="menu-link">
-        <i class="menu-icon bi bi-person-lines-fill"></i>
-        <div data-i18n="Tables">Lista de Usuarios</div>
-      </a>
-    </li>
-    {%endif%}
-    <li class="menu-item {% if request.path == '/sensor-temperatura' %} active {% endif %}">
-      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}
-        <a href="/sensor-temperatura" class="menu-link">
-            <i class="bi bi-thermometer"></i>
-            <span class="menu-text" style="margin-left: 12px;"></span>
-            <div data-i18n="Etiqueta"> Sensor de temperatura</div>      
-        </a>
-      {%endif%}
-    </li>
 
-    <li 
-      class="menu-item {% if request.path == '/sensor-humo' %} active {% endif %}">
-      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
+    {% if dataLogin.rol == 1 %}
+      <li class="menu-item {% if request.path == '/lista-de-areas' %} active{% endif %}">
+        <a href="/lista-de-areas" class="menu-link">
+          <i class="menu-icon bi bi-person-lines-fill"></i>
+          <div data-i18n="Boxicons">Departamentos Data Center</div>
+        </a>
+      </li>
+
+      <li class="menu-item {% if request.path == '/lista-de-usuarios' %} active {% endif %}">
+        <a href="/lista-de-usuarios" class="menu-link">
+          <i class="menu-icon bi bi-person-lines-fill"></i>
+          <div data-i18n="Tables">Lista de Usuarios</div>
+        </a>
+      </li>
+    {% endif %}
+
+    {% if dataLogin.rol in [1, 2] %}
+      <li class="menu-item {% if request.path == '/sensor-temperatura' %} active {% endif %}">
+        <a href="/sensor-temperatura" class="menu-link">
+          <i class="bi bi-thermometer"></i>
+          <span class="menu-text" style="margin-left: 12px;"></span>
+          <div data-i18n="Etiqueta"> Sensor de temperatura</div>      
+        </a>
+      </li>
+    {% endif %}
+
+    {% if dataLogin.rol == 1 %}
+      <li class="menu-item {% if request.path == '/sensor-humo' %} active {% endif %}">
         <a href="/sensor-humo" class="menu-link">
           <i class="bi bi-fire"></i>
           <span class="menu-text" style="margin-left: 12px;"></span>
           <div data-i18n="Etiqueta">Sensor de humo </div>
         </a>
-      {%endif%}
-    </li>
-    <li class="menu-item {% if request.path == '/tarjeta-rfid' %} active {% endif %}">
-      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
+      </li>
+
+      <li class="menu-item {% if request.path == '/tarjeta-rfid' %} active {% endif %}">
         <a href="/tarjeta-rfid" class="menu-link">
           <i class="bi bi-credit-card"></i>
-          <span class="menu-text" style="margin-left: 12px;"> <!-- Agregado un margen izquierdo al texto -->
+          <span class="menu-text" style="margin-left: 12px;">
             <div data-i18n="Etiqueta">Tarjeta RFID</div>
           </span>
         </a>
-      {% endif%}
-    </li>
+      </li>
+    {% endif %}
 
-    <li 
-    class="menu-item {% if request.path == '/datavista' %} active {% endif %}">
-      {% if dataLogin.rol == 1 and dataLogin.id == 1 %}  
-      <a href="/datavista" class="menu-link">
-        <i class="bi bi-building-fill-gear"></i>
-        <span class="menu-text" style="margin-left: 12px;"></span>
-        <div data-i18n="Etiqueta">Datacenter Vista</div>
-      </a>
-      {%endif%}
-  </li>
-    <li
-      class="menu-item {% if request.path == '/mi-perfil/{{dataLogin.id}}'%} active {% endif %}"
-    >
+    {% if dataLogin.rol in [1, 2] %}
+      <li class="menu-item {% if request.path == '/datavista' %} active {% endif %}">
+        <a href="/datavista" class="menu-link">
+          <i class="bi bi-building-fill-gear"></i>
+          <span class="menu-text" style="margin-left: 12px;"></span>
+          <div data-i18n="Etiqueta">Datacenter Vista</div>
+        </a>
+      </li>
+    {% endif %}
+
+    <li class="menu-item {% if request.path == '/mi-perfil/{{dataLogin.id}}' %} active {% endif %}">
       <a href="/mi-perfil/{{dataLogin.id}}" class="menu-link">
         <i class="menu-icon bi bi-person-fill-gear"></i>
         <div data-i18n="Tables">Mi Perfil</div>
       </a>
     </li>
+
     <li class="menu-item">
       <a href="{{ url_for('cerraSesion') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bi-box-arrow-right"></i>
