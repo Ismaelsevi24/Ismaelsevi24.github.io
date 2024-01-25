@@ -4,18 +4,25 @@
 
 {% block body %}
   <div class="card content_consignaciones" style="border-radius: 0px !important">
-    <section id="respuestaFiltroMes">
+    <section id="respuestaFiltroMes" class="mt-3">
       <h2 class="text-center mt-5 mb-5">
         Registros de Tarjeta
         <hr />
       </h2>
 
+      <div class="d-flex justify-content-start mb-3">
+        <a href="#" id="descargarExcelBtn" class="btn btn-sm ml-2" style="background-color: #699494; color: white; border-color: #699494;">
+          <i class="bi bi-file-excel"></i>
+          Descargar Reportes
+       </a>
+      </div>
+
       <div class="table-responsive text-nowrap">
         <table class="table table-hover">
           <thead>
-            <tr style="background-color: #9f9f9f">
+            <tr style="background-color: #ddd">
               <th>ID_Usuario</th>
-              <th>Nombre </th>
+              <th>Nombre y Apellido</th>
               <th>UID Tarjeta</th>
               <th>Fecha-hora acceso</th>
               <!-- La columna de Acciones se ha eliminado -->
@@ -39,6 +46,18 @@
 
   <!-- Script Custom -->
   {% block customJS %}
-  <!-- No se ha modificado el script ya que la función eliminarSensor no se utiliza -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+  <script>
+    document.getElementById('descargarExcelBtn').addEventListener('click', function() {
+      // Obtener la información de la tabla
+      var table = document.querySelector('.table');
+      var data = XLSX.utils.table_to_sheet(table);
+
+      // Crear el libro de Excel y guardarlo como archivo
+      var libro = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(libro, data, 'RegistrosTarjeta');
+      XLSX.writeFile(libro, 'registros_tarjeta.xlsx');
+    });
+  </script>
   {% endblock %}
-{% endblock %}
+{% endblock %}
