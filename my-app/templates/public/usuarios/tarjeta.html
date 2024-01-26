@@ -10,11 +10,12 @@
         <hr />
       </h2>
 
-      <div class="d-flex justify-content-start mb-3">
-        <a href="#" id="descargarExcelBtn" class="btn btn-sm ml-2" style="background-color: #699494; color: white; border-color: #699494;">
-          <i class="bi bi-file-excel"></i>
+      <div class="d-flex justify-content-between mb-3">
+        <div><!-- Contenedor para espacio a la izquierda del botón, si es necesario --></div>
+        <a href="#" id="descargarExcelBtn" class="btn btn-sm" style="background-color: #699494; color: white; border-color: #699494;">
+          <i class="bi bi-file-earmark-text"></i>
           Descargar Reportes
-       </a>
+        </a>
       </div>
 
       <div class="table-responsive text-nowrap">
@@ -22,7 +23,7 @@
           <thead>
             <tr style="background-color: #ddd">
               <th>ID_Usuario</th>
-              <th>Nombre y Apellido</th>
+              <th>Nombre</th>
               <th>UID Tarjeta</th>
               <th>Fecha-hora acceso</th>
               <!-- La columna de Acciones se ha eliminado -->
@@ -34,7 +35,7 @@
                 <td>{{ tarjeta_rfid.id_usuario}}</td>
                 <td>{{ tarjeta_rfid.nombre}} </td>
                 <td>{{ tarjeta_rfid.tarjeta }}</td>
-                <td>{{ tarjeta_rfid.fecha_hora}}</td>
+                <td class="fecha-hora">{{ tarjeta_rfid.fecha_hora}}</td>
                 <!-- La columna de Acciones se ha eliminado -->
               </tr>
             {% endfor %}
@@ -49,15 +50,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
   <script>
     document.getElementById('descargarExcelBtn').addEventListener('click', function() {
-      // Obtener la información de la tabla
-      var table = document.querySelector('.table');
-      var data = XLSX.utils.table_to_sheet(table);
+      try {
+        // Obtener la información de la tabla
+        var table = document.querySelector('.table');
+        var rows = Array.from(table.querySelectorAll('tbody tr'));
 
-      // Crear el libro de Excel y guardarlo como archivo
-      var libro = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(libro, data, 'RegistrosTarjeta');
-      XLSX.writeFile(libro, 'registros_tarjeta.xlsx');
+        // Ajustar el formato de fecha-hora y obtener datos
+        var data = [ // Primera fila con nombres de columnas
+          ["ID_Usuario", "Nombre", "UID Tarjeta", "Fecha-hora acceso"]
+        ];
+
+        data = data.concat(rows.map(row => {
+          var cells = Array.from(row.cells);
+          return cells.map(cell => {
+            if (cell.classList.contains('fecha-hora')) {
+              // Ajustar el formato de fecha-hora
+              return new Date(cell.innerText).toLocaleString();  // Puedes ajustar el formato según tus preferencias
+            }
+            return cell.innerText;
+          });
+        }));
+
+        // Crear el libro de Excel y guardarlo como archivo
+        var libro = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(libro, XLSX.utils.aoa_to_sheet(data), 'RegistrosTarjeta');
+        XLSX.writeFile(libro, 'registros_tarjeta.xlsx');
+      } catch (error) {
+        console.error('Error al generar el archivo Excel:', error);
+      }
     });
   </script>
   {% endblock %}
-{% endblock %}
+{% endblock %}
+
