@@ -1,6 +1,6 @@
 ## Proyecto Data Center -- Proyectechx
 
-##### Aprende a desarrollar un sistema CRUD utilizando Python 🐍 y MySQL 💾 mientras creas un impresionante panel de control. Este curso te guiará a través de la creación de aplicaciones interactivas y eficientes, permitiéndote gestionar datos con facilidad.
+##### Este proyecto se centra en la creación de una plataforma web integral para la gestión y control de accesos, así como el monitoreo de condiciones ambientales mediante sensores. A continuación, se detallan las principales funcionalidades del sistema.
 
 ![Dashboard](./imagenes/imagen1.png)
 
@@ -22,28 +22,21 @@
 
 ![Home](./imagenes/imagen10.png)
 
-### Requerimientos 📋
+### Gestión de Usuarios:
 
-    Servidor Web (Apache)
-    MySQL 5 o superior
-    phpMyAdmin (opcional)
-    Puedes usar un todo en uno como XAMPP, WAMPP u otro.
+# La página web permite la creación y gestión de usuarios. Los administradores pueden agregar, modificar o eliminar cuentas de usuario según sea necesario.
+### Generación de Claves:
 
-### Instrucciones para descarga 🔧
+# La plataforma facilita la generación segura de claves para los usuarios. Estas claves podrían ser utilizadas para acceder a la plataforma o para otros propósitos específicos dentro del sistema.
+#### Monitoreo de Sensores:
 
-    Descarga el proyecto
-    Importa el archivo crud_python.sql a MySQL
-    Cambia los datos de conexión en el archivo conexionBD.py
-    Crea el entono virtual (opcional)  `virtualenv env`
-    Activas tu entorno virtual . env/Scripts/activate`
-    Ejecutas el archivo `pip install -r requirements.txt` para instalar todos paquetes o   dependencias del proyecto.
-    Ingresa desde un navegador a http://127.0.0.1:5600/
+# Se integran sensores de temperatura y humo para monitorizar las condiciones ambientales. La página web proporciona una interfaz para visualizar en tiempo real los datos recopilados por estos sensores.
+### Control de Acceso con Tarjeta RFID:
 
-### Expresiones de Gratitud 🎁
+# Implementación de un sistema de control de acceso utilizando tarjetas RFID. Los usuarios autorizados pueden utilizar sus tarjetas para acceder a áreas específicas o realizar funciones particulares.
+### Diseño del Datacenter en 3D:
 
-    Comenta a otros sobre este proyecto 📢
-    Invita una cerveza 🍺 o un café ☕
-    Paypal iamdeveloper86@gmail.com
-    Da las gracias públicamente 🤓.
+# Se ha creado un modelo tridimensional del datacenter donde se puede visualizar la disposición física de los servidores, equipos y otros componentes. Esto permite una comprensión clara de la infraestructura.
+#### Integración de Electrónica en Maqueta Física:
 
-## No olvides SUSCRIBIRTE 👍
+# Además de la representación en 3D, se ha implementado la parte electrónica del diseño en una maqueta física. Esto implica la conexión de los sensores, sistemas de acceso y otros elementos a la maqueta para una representación física funcional del sistema.
