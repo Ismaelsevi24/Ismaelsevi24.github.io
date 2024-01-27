@@ -26,6 +26,8 @@
               <th>Nombre</th>
               <th>UID Tarjeta</th>
               <th>Fecha-hora acceso</th>
+              <th>Estado</th>
+              <th>Area</th>
               <!-- La columna de Acciones se ha eliminado -->
             </tr>
           </thead>
@@ -36,6 +38,8 @@
                 <td>{{ tarjeta_rfid.nombre}} </td>
                 <td>{{ tarjeta_rfid.tarjeta }}</td>
                 <td class="fecha-hora">{{ tarjeta_rfid.fecha_hora}}</td>
+                <td>{{ tarjeta_rfid.estado }}</td>
+                <td>{{ tarjeta_rfid.id_area }}</td>
                 <!-- La columna de Acciones se ha eliminado -->
               </tr>
             {% endfor %}
