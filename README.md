@@ -2,23 +2,13 @@
 
 ##### Aprende a desarrollar un sistema CRUD utilizando Python 🐍 y MySQL 💾 mientras creas un impresionante panel de control. Este curso te guiará a través de la creación de aplicaciones interactivas y eficientes, permitiéndote gestionar datos con facilidad.
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/Dashboard-python-login-urian-viera.png)
+![Dashboard](./imagenes/imagen1.png)
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-crear-user-urian-viera.png)
+![Crear Usuario](./imagenes/imagen2.png)
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-recuperar-clave-urian-viera.png)
+![Recuperar Clave](./imagenes/imagen3.png)
 
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashborad-python-home-urian-viera.png)
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-registrar-cliente-urian-viera.png)
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-lista-empleados-urian-viera.png)
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-lista-usuarios-urian-viera.png)
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-editar-perfil-urian-viera.png)
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/dashboard-python-reporte-empleados-urian-viera.png)
+![Home](./imagenes/imagen4.png)
 
 ### Requerimientos 📋
 
