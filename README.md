@@ -1,4 +1,4 @@
-## CRUD con Python 🐍 MySQL 💾 y un Dashboard Asombroso 🚀
+## Proyecto Data Center -- Proyectechx
 
 ##### Aprende a desarrollar un sistema CRUD utilizando Python 🐍 y MySQL 💾 mientras creas un impresionante panel de control. Este curso te guiará a través de la creación de aplicaciones interactivas y eficientes, permitiéndote gestionar datos con facilidad.
 
@@ -9,6 +9,18 @@
 ![Recuperar Clave](./imagenes/imagen3.png)
 
 ![Home](./imagenes/imagen4.png)
+
+![Home](./imagenes/imagen5.png)
+
+![Home](./imagenes/imagen6.png)
+
+![Home](./imagenes/imagen7.png)
+
+![Home](./imagenes/imagen8.png)
+
+![Home](./imagenes/imagen9.png)
+
+![Home](./imagenes/imagen10.png)
 
 ### Requerimientos 📋
 
