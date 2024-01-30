@@ -25,7 +25,7 @@ body {
 #loader-container {
   width: 150px;
   height: 150px;
-  color: white;
+  color: rgb(170, 163, 163);
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -64,7 +64,7 @@ body {
     border: 5px solid white;
   }
   50% {
-    border: 25px solid #08b324;
+    border: 25px solid #78dcda;
   }
   100% {
     border: 5px solid white;
@@ -92,8 +92,8 @@ body {
 }
 
 .bx-menu {
-  background-color: #08b324 !important;
-  color: #fff;
+  background-color: #6ce3e1 !important;
+  color: #918d8d;
   padding: 10px 10px;
   border-radius: 50%;
 }
@@ -128,7 +128,7 @@ tbody tr:hover {
 
 .borderCheckbox {
   cursor: pointer;
-  border-color: #08b324;
+  border-color: #7eeaee;
   box-shadow: 0 2px 4px 0 rgba(10, 207, 10, 0.4);
 }
 .pagination {
@@ -148,7 +148,7 @@ tbody tr:hover {
 }
 
 .pesos {
-  background-color: #08b324;
+  background-color: #81e0d4;
   color: #fff;
   padding: 2px;
   border-radius: 10%;
@@ -227,12 +227,12 @@ tbody tr:hover {
 
 #informe_general:hover {
   cursor: pointer;
-  border-bottom: dotted 1px #08b324;
+  border-bottom: dotted 1px #86f9f4;
 }
 
 #search {
   min-width: 44% !important;
-  background-color: #f3efef !important;
+  background-color: #8b8787 !important;
 }
 
 .acceso {

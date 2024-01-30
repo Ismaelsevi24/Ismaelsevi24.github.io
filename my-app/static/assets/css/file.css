@@ -17,7 +17,7 @@
   height: 34px;
   margin-bottom: 0;
   border-radius: 100%;
-  background: #ffffff;
+  background: #a4a4a4;
   border: 1px solid transparent;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
@@ -25,15 +25,15 @@
   transition: all 0.2s ease-in-out;
 }
 .avatar-upload .avatar-edit input + label:hover {
-  background: #f1f1f1;
-  border-color: #d6d6d6;
+  background: #868484;
+  border-color: #717070;
 }
 .avatar-upload .avatar-preview {
   width: 192px;
   height: 192px;
   position: relative;
   border-radius: 100%;
-  border: 6px solid #f8f8f8;
+  border: 6px solid #747171;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 .avatar-upload .avatar-preview > div {
