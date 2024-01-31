@@ -11,7 +11,7 @@ body {
 
 /*Inicio del loader */
 #loader-out {
-  background-color: #cecece;
+  background-color: #545252;
   opacity: 0.5;
   position: fixed;
   width: 100%;
@@ -25,14 +25,14 @@ body {
 #loader-container {
   width: 150px;
   height: 150px;
-  color: rgb(170, 163, 163);
+  color: rgb(130, 128, 128);
   margin: 0 auto;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  border: 5px solid #cecece;
+  border: 5px solid #656565;
   border-radius: 50%;
   -webkit-animation: borderScale 1s infinite ease-in-out;
   animation: borderScale 1s infinite ease-in-out;
@@ -49,25 +49,25 @@ body {
 }
 @-webkit-keyframes borderScale {
   0% {
-    border: 5px solid white;
+    border: 5px solid rgb(140, 226, 223);
   }
   50% {
-    border: 25px solid #8bb492;
+    border: 25px solid #888c89;
   }
   100% {
-    border: 5px solid white;
+    border: 5px solid rgb(108, 232, 230);
   }
 }
 
 @keyframes borderScale {
   0% {
-    border: 5px solid white;
+    border: 5px solid rgb(123, 229, 237);
   }
   50% {
     border: 25px solid #78dcda;
   }
   100% {
-    border: 5px solid white;
+    border: 5px solid rgb(99, 223, 236);
   }
 }
 /*Fin del loader*/
@@ -88,7 +88,7 @@ body {
   display: flex;
   justify-content: flex-end;
   text-align: end;
-  background-color: #fff;
+  background-color: #bd8787;
 }
 
 .bx-menu {
@@ -111,7 +111,7 @@ body {
 }
 
 tbody tr {
-  border-bottom: 1px solid #eee !important;
+  border-bottom: 1px solid #858383 !important;
 }
 
 tbody tr:hover {
@@ -129,7 +129,7 @@ tbody tr:hover {
 .borderCheckbox {
   cursor: pointer;
   border-color: #7eeaee;
-  box-shadow: 0 2px 4px 0 rgba(10, 207, 10, 0.4);
+  box-shadow: 0 2px 4px 0 rgba(94, 96, 94, 0.4);
 }
 .pagination {
   justify-content: center;
@@ -149,21 +149,21 @@ tbody tr:hover {
 
 .pesos {
   background-color: #81e0d4;
-  color: #fff;
+  color: #78e5ec;
   padding: 2px;
   border-radius: 10%;
   margin-right: 10px;
 }
 
 .colorTheadTrTh {
-  color: #fff !important;
+  color: #737070 !important;
 }
 
 .input_vacio {
   border-color: #dc3545 !important;
 }
 .input_lleno {
-  border-color: #198754 !important;
+  border-color: #3c3d3d !important;
 }
 
 .menu-vertical .menu-inner > .menu-item .menu-link {
@@ -192,15 +192,15 @@ tbody tr:hover {
 }
 
 .alert-success {
-  background-color: #48c808 !important;
-  color: #fff !important;
+  background-color: #5c8ec5 !important;
+  color: #8b8888 !important;
 }
 
 .mayuscula {
   text-transform: uppercase !important;
 }
 .btn-primary {
-  background-color: #09c046 !important;
+  background-color: #6093df !important;
   border: none !important;
 }
 .btn-close {
