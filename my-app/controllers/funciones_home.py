@@ -152,13 +152,23 @@ def eliminarUsuario(id):
     try:
         with connectionBD() as conexion_MySQLdb:
             with conexion_MySQLdb.cursor(dictionary=True) as cursor:
-                # Eliminar acceso asociado al usuario
-                querySQL_acceso = "DELETE FROM railway.accesos WHERE id_usuario = %s"
-                cursor.execute(querySQL_acceso, (id,))
+                # Obtener el id_area del usuario que se va a eliminar
+                querySQL_obtener_id_area = "SELECT id_area FROM proyectodata.usuarios WHERE id_usuario = %s"
+                cursor.execute(querySQL_obtener_id_area, (id,))
+                id_area_usuario = cursor.fetchone()['id_area']
+
+                # Eliminar registros en la tabla tarjeta_rfid que tienen id_area igual al id_usuario del usuario
+                querySQL_tarjeta_rfid = "DELETE FROM proyectodata.tarjeta_rfid WHERE id_area = %s"
+                cursor.execute(querySQL_tarjeta_rfid, (id_area_usuario,))
                 conexion_MySQLdb.commit()
 
-                # Eliminar usuario
-                querySQL_usuario = "DELETE FROM railway.usuarios WHERE id_usuario = %s"
+                # Eliminar registros en la tabla accesos que hacen referencia al usuario
+                querySQL_accesos = "DELETE FROM proyectodata.accesos WHERE id_usuario = %s"
+                cursor.execute(querySQL_accesos, (id,))
+                conexion_MySQLdb.commit()
+
+                # Eliminar el usuario principal
+                querySQL_usuario = "DELETE FROM proyectodata.usuarios WHERE id_usuario = %s"
                 cursor.execute(querySQL_usuario, (id,))
                 conexion_MySQLdb.commit()
 
@@ -167,6 +177,7 @@ def eliminarUsuario(id):
     except Exception as e:
         print(f"Error en eliminarUsuario: {e}")
         return []
+
    
 
 def eliminarArea(id):
