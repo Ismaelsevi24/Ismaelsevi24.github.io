@@ -175,6 +175,16 @@ def datavista():
     else:
         flash('Primero debes iniciar sesión.', 'error')
         return redirect(url_for('inicio'))
+    
+@app.route('/placavista', methods=['GET'])
+def placavista():
+    if 'conectado' in session:
+        
+        return render_template('public/usuarios/placavista.html', dataLogin=dataLoginSesion())
+    else:
+        flash('Primero debes iniciar sesión.', 'error')
+        return redirect(url_for('inicio'))
+
 
 #Datos tarjeta
 @app.route('/tarjeta-rfid', methods=['GET'])

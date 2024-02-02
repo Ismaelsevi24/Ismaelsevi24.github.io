@@ -88,6 +88,16 @@
       </li>
     {% endif %}
 
+    {% if dataLogin.rol in [1, 2] %}
+      <li class="menu-item {% if request.path == '/placavista' %} active {% endif %}">
+        <a href="/placavista" class="menu-link">
+          <i class="bi bi-building-fill-gear"></i>
+          <span class="menu-text" style="margin-left: 12px;"></span>
+          <div data-i18n="Etiqueta">Placas PCB</div>
+        </a>
+      </li>
+    {% endif %}
+
     <li class="menu-item {% if request.path == '/mi-perfil/{{dataLogin.id}}' %} active {% endif %}">
       <a href="/mi-perfil/{{dataLogin.id}}" class="menu-link">
         <i class="menu-icon bi bi-person-fill-gear"></i>
